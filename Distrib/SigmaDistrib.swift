@@ -1456,6 +1456,14 @@ public struct Sigma {
     return sum(values) / count
   }
   
+  public static func average(_ values: [Int]) -> Double? {
+    let count = Double(values.count)
+    if count == 0 { return nil }
+    
+    let arrayAsDouble = values.compactMap{ Double($0) }
+    return sum(arrayAsDouble) / count
+  }
+  
   // MARK: - Protected functionality
   
   static func sort(_ values: [Double]) -> [Double] {
